@@ -1,24 +1,12 @@
 <template>
-  <div class="container" @click="clickHandle('test click', $event)">
-
-    <div class="userinfo" @click="bindViewTap">
+  <div class="container" @click="clickHandle($event)">
+    <div class="userinfo">
       <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
-      <div class="userinfo-nickname">
-        <card :text="userInfo.nickName"></card>
+      <div class="userinfo">
+        <div class="info">{{userInfo.country}}-{{userInfo.province}}-{{userInfo.city}}</div>
+        <div class="info">{{userInfo.gender==1?'猛男':'美女'}}</div>
       </div>
     </div>
-
-    <div class="usermotto">
-      <div class="user-motto">
-        <card :text="motto"></card>
-      </div>
-    </div>
-      
-    <form class="form-container">
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
-    <a href="/pages/counter/counter" class="counter">去往Vuex示例页面</a>
   </div>
 </template>
 
@@ -32,16 +20,11 @@ export default {
       userInfo: {}
     }
   },
-
   components: {
     card
   },
 
   methods: {
-    bindViewTap () {
-      const url = '../logs/logs'
-      wx.navigateTo({ url })
-    },
     getUserInfo () {
       // 调用登录接口
       wx.login({
@@ -54,8 +37,9 @@ export default {
         }
       })
     },
-    clickHandle (msg, ev) {
-      console.log('clickHandle:', msg, ev)
+    clickHandle (e) {
+      const url = '../home/home';
+      wx.navigateTo({url});
     }
   },
 
@@ -80,10 +64,13 @@ export default {
   border-radius: 50%;
 }
 
-.userinfo-nickname {
+.userinfo {
   color: #aaa;
 }
-
+.info{
+  margin-top: 20rpx;
+  color: black;
+}
 .usermotto {
   margin-top: 150px;
 }

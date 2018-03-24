@@ -14,7 +14,5 @@ export default {
 </script>
 
 <style scoped>
-.card {
-  padding: 10px;
-}
+
 </style>

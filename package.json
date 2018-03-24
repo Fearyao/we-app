@@ -11,6 +11,8 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "es6-promise": "^4.2.4",
+    "isomorphic-fetch": "^2.2.1",
     "mpvue": "^1.0.5",
     "vue-template-compiler": "^2.5.16",
     "vuex": "^2.3.1",
