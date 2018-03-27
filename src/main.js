@@ -1,15 +1,14 @@
-import Vue from 'vue'
-import App from './App'
+import Vue from 'vue';
+import App from './App';
+import "./styles/weui.css";
 
-// import WeVue from 'we-vue'
-// import 'we-vue/lib/style.css'
-
-// Vue.use(WeVue)
 
 Vue.config.productionTip = false
 App.mpType = 'app'
 
-const app = new Vue(App)
+const app = new Vue({
+  ...App
+})
 app.$mount()
 
 export default {
@@ -27,6 +26,29 @@ export default {
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'Fearyao',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      color: '#999',
+      selectedColor: '#000',
+      backgroundColor: '#fff',
+      borderStyle: 'black',
+      list: [{
+        pagePath: 'pages/index/index',
+        text: '资讯',
+        iconPath: 'static/assets/quanzi.png',
+        selectedIconPath: 'static/assets/quanzi.png'
+      }, {
+        pagePath: 'pages/logs/logs',
+        text: '圈子',
+        iconPath: 'static/assets/quanzi.png',
+        selectedIconPath: 'static/assets/quanzi.png'
+      }, {
+        pagePath: 'pages/home/home',
+        text: '圈子',
+        iconPath: 'static/assets/quanzi.png',
+        selectedIconPath: 'static/assets/quanzi.png'
+      }]
+
     }
   }
 }

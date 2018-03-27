@@ -3,18 +3,19 @@
     <button @click="start()">
       开始
     </button>
-    <div >
+    <a href="../index/index">index</a>
+
+    <!-- <div >
       {{count}}
       <br>123
       {{speedList}}
     </div>
     <div >
-      x:{{state.x}} y:{{state.y}} z:{{state.z}} <br>
-      
+      x:{{state.x}} y:{{state.y}} z:{{state.z}} <br>     
     </div>
     <div class="time">
       {{time}}
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -84,15 +85,17 @@ export default {
       }
     },
   },
-  created(){
+  onLoad(){
     console.log('created')
     this.x=this.y=this.z=this.lastX=this.lastY=this.lastZ=0;
     this.time = 0;
     this.count = 0;
+    this.speedList=[];
   },
-  destroyed(){
-    console.log('dis');
+  onUnload(){
+    wx.stopAccelerometer()
   }
+
 }
 
 </script>

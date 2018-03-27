@@ -10,7 +10,7 @@
 	"miniprogramRoot": "./dist/",
 	"compileType": "miniprogram",
 	"appid": "wx690a45552682b832",
-	"projectname": "weapp",
+	"projectname": "biu",
 	"condition": {
 		"search": {
 			"current": -1,
